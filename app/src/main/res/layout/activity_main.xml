@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:timer="http://schemas.android.com/apk/res-auto"
+    tools:context=".TestActivity">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.softwr.sample.MyViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center"
+           android:gravity="center"
+           android:orientation="horizontal">
+
+
+           <TextView
+               android:id="@+id/start_time"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:hint="Start Time"
+               android:textStyle="bold"
+               android:layout_gravity="center"/>
+
+           <TextView
+               android:id="@+id/end_time"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="16dp"
+               android:hint="End Time"
+               android:textStyle="bold"
+               android:layout_gravity="center"/>
+
+       </LinearLayout>
+
+        <com.softwr.circularview.CircularTimerClock
+            android:id="@+id/circular_clock"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_gravity="center"
+            timer:arc_dash_size="32dp"
+            timer:start_hour="0"
+            android:padding="10dp"
+            timer:start_minutes="0"
+            timer:end_hour="0"
+            timer:end_minutes="30"
+            timer:clock_time_interval="5"
+            timer:clock_tick_interval="15"
+            timer:clock_hour_color="#000"
+            timer:clock_tick_color="#000"
+            timer:hours_size="18sp"
+            timer:start_time_is_am="false"
+            timer:end_time_is_am="false"
+            timer:is_clock_inside="true"
+            timer:border_thickness="35dp"
+            timer:border_color="@color/gray"
+            timer:arc_gradient_color_start="@color/blue"
+            timer:arc_gradient_color_end="@color/blue"
+            timer:start_thumb_image="@drawable/small_moon"
+            timer:end_thumb_image="@drawable/small_sun"
+            timer:thumb_size="45dp" >
+
+
+
+        </com.softwr.circularview.CircularTimerClock>
+
+    </LinearLayout>
+
+</layout>
