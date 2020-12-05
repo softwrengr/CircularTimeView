@@ -19,7 +19,7 @@ repositories {
 <b>Add build.gradle</b>
 
      
-          implementation 'com.github.User:Repo:1.0.0'
+           implementation 'com.github.softwrengr:CircularTimeView:1.0.0'
           
           
           
