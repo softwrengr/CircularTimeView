@@ -59,7 +59,7 @@ Simply add the View to your layout xml
             
             
             
-        Below line are the code to Set Time programmatically. 
+        Below lines are the code to set Time programmatically. 
         SetStartHour(0,0,0,0) accept 4 parameter startHour, startMinutes, endHour and endMinutes.
         you can adjust as per your requirements also.
 

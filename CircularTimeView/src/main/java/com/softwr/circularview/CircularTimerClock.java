@@ -9,6 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.AttrRes;
@@ -38,6 +39,7 @@ public class CircularTimerClock extends FrameLayout {
     private boolean isClockInside = true;
     private CircularSliderView circularSliderView;
     private ClockView clockView;
+    private TextView tvTimeDifference;
     private StringBuilder startTimeSB = new StringBuilder();
     private StringBuilder endTimeSB = new StringBuilder();
     private Locale locale = new Locale("en_US");
@@ -81,13 +83,16 @@ public class CircularTimerClock extends FrameLayout {
         circularSliderWrapper.addView(circularSliderView);
         clockView = new ClockView(getContext(), attrs, defStyleAttr);
 
+        tvTimeDifference = new TextView(context);
+        tvTimeDifference.setText("Mfloos");tvTimeDifference.setGravity(View.TEXT_ALIGNMENT_CENTER);
+        tvTimeDifference.setGravity(Gravity.CENTER);
+
         circularSliderView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
                 LayoutParams lp = new LayoutParams(isClockInside ?
                         circularSliderView.getWidth() - 2* circularSliderView.getBorderThickness() :
-                        circularSliderView.getWidth(),
-                        isClockInside ? circularSliderView.getHeight()- 2* circularSliderView.getBorderThickness() :
+                        circularSliderView.getWidth(), isClockInside ? circularSliderView.getHeight()- 2* circularSliderView.getBorderThickness() :
                                 circularSliderView.getHeight());
                 lp.gravity= Gravity.CENTER;
                 clockView.setLayoutParams(lp);
@@ -97,6 +102,7 @@ public class CircularTimerClock extends FrameLayout {
             }
         });
 
+        circularSliderWrapper.addView(tvTimeDifference);
         circularSliderView.setStartTimeAM(isStartTImeAM);
         circularSliderView.setEndTimeAM(isEndTimeAM);
         circularSliderView.updateSliderState(circularSliderView.getStartThumbAngle(), circularSliderView.getEndThumbAngle());

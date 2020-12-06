@@ -21,6 +21,7 @@
            android:layout_height="wrap_content"
            android:layout_gravity="center"
            android:gravity="center"
+           android:layout_marginTop="100dp"
            android:orientation="horizontal">
 
 
@@ -45,8 +46,9 @@
 
         <com.softwr.circularview.CircularTimerClock
             android:id="@+id/circular_clock"
-            android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center"
             timer:arc_dash_size="32dp"
             timer:start_hour="0"
