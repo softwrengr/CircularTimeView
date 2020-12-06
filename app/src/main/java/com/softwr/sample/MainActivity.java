@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProviders;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.Toast;
 
 import com.softwr.circularview.CircularSliderView;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        binding.circularClock.setStartHour(0,0,9,30);
+        binding.circularClock.setTime(0,0,9,30);
 
         binding.circularClock.setOnTimeChangedListener(new CircularTimerClock.ontTimeChanged() {
             @Override
@@ -44,6 +45,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onEndTimeChange(String time, int hour, int minutes, boolean isAM) {
                 binding.endTime.setText(time);
+            }
+        });
+
+        binding.startTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.circularClock.setTime(11,0,7,30);
             }
         });
 

@@ -179,17 +179,19 @@ public class CircularTimerClock extends FrameLayout {
     }
 
 
-    public void setStartHour(int startHour,int startMinutes,int endHour,int endMinutes) {
+    public void setTime(int startHour,int startMinutes,int endHour,int endMinutes) {
         this.startHour = startHour;
         this.startMinutes = startMinutes;
         this.endHour = endHour;
         this.endMinutes = endMinutes;
 
-        circularSliderView.setStartAngle(circularSliderView.hourToHourAngle(startHour) + circularSliderView.minutesToMinutesAngle(startMinutes));
-        circularSliderView.setEndAngle(circularSliderView.hourToHourAngle(endHour) + circularSliderView.minutesToMinutesAngle(endMinutes));
+        double startAngle = circularSliderView.hourToHourAngle(startHour) + circularSliderView.minutesToMinutesAngle(startMinutes);
+        double endAngle =  circularSliderView.hourToHourAngle(endHour) + circularSliderView.minutesToMinutesAngle(endMinutes);
 
+        circularSliderView.setStartAngle(startAngle);
+        circularSliderView.setEndAngle(endAngle);
+        circularSliderView.invalidate();
 
-        setSlider();
     }
 
 
@@ -216,9 +218,4 @@ public class CircularTimerClock extends FrameLayout {
         ontTimeChangedListener = listener;
     }
 
-
-
-    private void setSlider(){
-
-    }
 }
