@@ -1,6 +1,6 @@
 # <b>CircularTimeView</b>
 
-CircularTimeView is an android version library for showing time in clock view. you can set and choose time from clock view. you can also customiz the clock view as per your requirements.
+</b>CircularTimeView is an android version library for showing time in clock view. you can set and choose time from clock view. you can also customiz the clock view as per your requirements.</b>
 
 
 # <b>How to use</b>
@@ -25,7 +25,7 @@ repositories {
           
 <b>To use it in your code</b>
 
-Simply add the View to your layout xml
+<b>Simply add the View to your layout xml</b>
      
       <com.softwr.circularview.CircularTimerClock
             android:id="@+id/circular_clock"
